@@ -5,7 +5,11 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgoCours", "AlgoCours\AlgoCours.csproj", "{E4E62C78-EEB1-4C80-A462-5C6B7CF60035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimensionsTab", "TwoDimensionsTab\TwoDimensionsTab.csproj", "{872BD65F-75F6-4C24-A22C-FE7D4540CBD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoDimensionsTab", "TwoDimensionsTab\TwoDimensionsTab.csproj", "{872BD65F-75F6-4C24-A22C-FE7D4540CBD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PorteedesVariables", "PorteedesVariables\PorteedesVariables.csproj", "{6F566E0E-C528-49B3-BF9E-08C25832E696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice1", "Exercice1\Exercice1.csproj", "{76349DD9-9AF2-4E6B-9DCC-24FDC500E233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{872BD65F-75F6-4C24-A22C-FE7D4540CBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{872BD65F-75F6-4C24-A22C-FE7D4540CBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{872BD65F-75F6-4C24-A22C-FE7D4540CBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F566E0E-C528-49B3-BF9E-08C25832E696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F566E0E-C528-49B3-BF9E-08C25832E696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F566E0E-C528-49B3-BF9E-08C25832E696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F566E0E-C528-49B3-BF9E-08C25832E696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76349DD9-9AF2-4E6B-9DCC-24FDC500E233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76349DD9-9AF2-4E6B-9DCC-24FDC500E233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76349DD9-9AF2-4E6B-9DCC-24FDC500E233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76349DD9-9AF2-4E6B-9DCC-24FDC500E233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
