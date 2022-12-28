@@ -1,56 +1,77 @@
 ﻿using System.Diagnostics;
 
 Console.WriteLine("Bonjour et bienvenue dans le jeu du juste prix");
-Console.WriteLine("Essayez de deviner un nombre entre 1 et 100");
 
-int maxPropal = 10;
-//Récupérer un entier aléatoire
-Random rnd = new Random();
-int nbToFind = rnd.Next(1, 100);
+bool newGame = true;
 
-int propositionNb = 0;
-int cptTours = 0;
-do
+while(newGame)
 {
-    bool propositionValid = false;
+    Console.WriteLine("Je réfléchis à un nombre entre 1 et 100 ....");
+    Console.WriteLine("Essaye de le deviner !");
+    //---------------Début de la partie---------------
+    int maxNbTours = 10;
+    //Récupérer un entier aléatoire
+    Random rnd = new Random();
+    int nbToFind = rnd.Next(1, 100);
+
+    int propositionNb = 0;
+    int cptTours = 0;
+
+
+    //---------------Chaque tour---------------
     do
     {
-        Console.WriteLine("Quel est votre proposition");
-        string proposition = Console.ReadLine();
-        try
+        bool propositionValid = false;
+        do
         {
-            //Le code qui peut échouer
-            propositionNb = Convert.ToInt32(proposition);
+            Console.WriteLine("Quel est votre proposition");
+            string proposition = Console.ReadLine();
+            try
+            {
+                //Le code qui peut échouer
+                propositionNb = Convert.ToInt32(proposition);
 
-            propositionValid = true;
-        }
-        catch
+                propositionValid = true;
+            }
+            catch
+            {
+                //Le code qui est exécuté si cela a échoué
+                Console.WriteLine("Merci d'entrer un entier numérique");
+                propositionValid = false;
+            }
+        } while (propositionValid == false);
+
+
+        if (nbToFind > propositionNb)
         {
-            //Le code qui est exécuté si cela a échoué
-            Console.WriteLine("Merci d'entrer un entier numérique");
-            propositionValid = false;
+            Console.WriteLine($"C'est plus");
         }
-    } while (propositionValid == false);
-    
-
-    if (nbToFind > propositionNb)
-    {
-        Console.WriteLine($"C'est plus");
+        else if (nbToFind < propositionNb)
+        {
+            Console.WriteLine("C'est moins");
+        }
+        cptTours++;
+        Console.WriteLine($"Tours restants :{(maxNbTours - cptTours)}");
     }
-    else if (nbToFind < propositionNb)
-    {
-        Console.WriteLine("C'est moins");
-    }
-    cptTours++;
-    Console.WriteLine($"Tours restants :{(maxPropal - cptTours)}");
-}
-while (nbToFind != propositionNb && cptTours < maxPropal);
+    while (nbToFind != propositionNb && cptTours < maxNbTours);
 
-if (nbToFind == propositionNb)
-{
-    Console.WriteLine("Gagné");
-}
-else
-{
-    Console.WriteLine($"Perdu, le nombre était {nbToFind}");
+    //---------------Partie terminée---------------
+    if (nbToFind == propositionNb)
+    {
+        Console.WriteLine("Gagné");
+    }
+    else
+    {
+        Console.WriteLine($"Perdu, le nombre était {nbToFind}");
+    }
+
+    Console.WriteLine("");
+    Console.WriteLine("");
+    Console.WriteLine("Voulez-vous faire une nouvelle partie ? O/N");
+    string reponse = Console.ReadLine();
+
+    if (reponse != "O" && reponse != "o")
+    {
+        newGame = false;
+    }
 }
