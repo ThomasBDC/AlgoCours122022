@@ -2,6 +2,8 @@
 
 Console.WriteLine("Bonjour et bienvenue dans le jeu du juste prix");
 
+List<int> allGamesResult = new List<int>();
+
 bool newGame = true;
 
 int[] maxNbToFind = new int[]
@@ -102,6 +104,22 @@ while(newGame)
         Console.WriteLine($"Perdu, le nombre était {nbToFind}");
         Console.ForegroundColor = ConsoleColor.White;
     }
+
+
+    Console.WriteLine("");
+    Console.WriteLine("");
+    Console.WriteLine("");
+
+    allGamesResult.Add(cptTours);
+
+    Console.WriteLine("---- STATISTIQUES ----");
+    /*Transformer ces 4 méthodes LINQ en méthode faite à la main */
+    Console.WriteLine($"Nb victoires : {allGamesResult.Count(score => score < 10)}");
+    Console.WriteLine($"Nb défaites : {allGamesResult.Count(score => score >= 10)}");
+    Console.WriteLine($"Meilleur score :{allGamesResult.Min()}");
+    Console.WriteLine($"Moyenne: {allGamesResult.Average()}");
+
+
 
     Console.WriteLine("");
     Console.WriteLine("");
