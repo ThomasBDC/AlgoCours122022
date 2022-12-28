@@ -6,8 +6,11 @@ bool newGame = true;
 
 while(newGame)
 {
+
+    Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("Je réfléchis à un nombre entre 1 et 100 ....");
     Console.WriteLine("Essaye de le deviner !");
+    Console.ForegroundColor = ConsoleColor.White;
     //---------------Début de la partie---------------
     int maxNbTours = 10;
     //Récupérer un entier aléatoire
@@ -58,11 +61,15 @@ while(newGame)
     //---------------Partie terminée---------------
     if (nbToFind == propositionNb)
     {
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Gagné");
+        Console.ForegroundColor = ConsoleColor.White;
     }
     else
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine($"Perdu, le nombre était {nbToFind}");
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     Console.WriteLine("");
