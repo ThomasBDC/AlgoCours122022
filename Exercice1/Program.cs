@@ -113,11 +113,11 @@ while(newGame)
     allGamesResult.Add(cptTours);
 
     Console.WriteLine("---- STATISTIQUES ----");
-    /*Transformer ces 4 méthodes LINQ en méthode faite à la main */
-    Console.WriteLine($"Nb victoires : {allGamesResult.Count(score => score < 10)}");
-    Console.WriteLine($"Nb défaites : {allGamesResult.Count(score => score >= 10)}");
-    Console.WriteLine($"Meilleur score :{allGamesResult.Min()}");
-    Console.WriteLine($"Moyenne: {allGamesResult.Average()}");
+    /*Transformer ces 4 méthodes LINQ en méthode faite à la main 1*/
+    Console.WriteLine($"Nb victoires : {getNbVictoires(allGamesResult)}");
+    Console.WriteLine($"Nb défaites : {getNbDefeat(allGamesResult)}");
+    Console.WriteLine($"Meilleur score :{getMin(allGamesResult)}");
+    Console.WriteLine($"Moyenne: {getAverage(allGamesResult)}");
 
 
 
@@ -130,4 +130,57 @@ while(newGame)
     {
         newGame = false;
     }
+}
+
+int getMin(List<int> maListe)
+{
+    int min = 11100;
+
+    foreach (int number in maListe)
+    {
+        if (number < min)
+        {
+            min = number;
+        }
+    }
+
+    return min;
+}
+
+
+int getNbVictoires(List<int> mesScores)
+{
+    int nbVictory = 0;
+    foreach(int scores in mesScores){
+        if (scores < 10){
+            nbVictory++; 
+        }
+    }
+    return nbVictory;
+}
+int getNbDefeat(List<int> mesScores)
+{
+    int nbDefeat = 0;
+    foreach(int scores in mesScores){
+        if (scores >= 10){
+            nbDefeat++; 
+        }
+    }
+    return nbDefeat;
+}
+
+double getAverage(List<int> mesScores){
+    // score:      5      8     10
+    // nbTotal 0   5    5+8=13  13+10=23
+    
+    // la moyenne -> nbTotal / nbElement
+    //23 /3
+    double nbElement = 0;
+    double nbTotal =0;
+    foreach(double score in mesScores){
+        nbElement++;
+        nbTotal = nbTotal + score;
+    }
+    double Average = nbTotal / nbElement;
+    return Average;
 }
