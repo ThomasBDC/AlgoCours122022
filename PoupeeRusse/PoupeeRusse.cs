@@ -8,10 +8,9 @@ namespace PoupeeRusseNsP
 {
     public class PoupeeRusse
     {
-        public PoupeeRusse(string couleur, PoupeeRusse fille)
+        public PoupeeRusse(string couleur)
         {
             Couleur = couleur;
-            Fille = fille;
         }
 
         public string Couleur { get; set; }

@@ -1,10 +1,33 @@
-﻿
+﻿using PoupeeRusseNsP;
 
-using PoupeeRusseNsP;
 
-var poupee = new PoupeeRusse("Rouge",
-                new PoupeeRusse("Bleu",
-                    new PoupeeRusse("Verte", 
-                        new PoupeeRusse("Jaune", null))));
+var allColors = new string[] { "rouge", "vert", "mauve", "kaki", "jaunatre" };
 
-Console.WriteLine(poupee.Couleur);
+ShowAllPoupees(PopulatePoupees());
+
+PoupeeRusse PopulatePoupees(int increment = 0, PoupeeRusse poupeeActuelle = null)
+{
+    //Création de l'élément parent
+    if (increment == 0)
+    {
+        poupeeActuelle = new PoupeeRusse(allColors[increment]);
+    }
+
+    increment++;
+    if(increment < allColors.Length)
+    { 
+        poupeeActuelle.Fille = new PoupeeRusse(allColors[increment]);
+        PopulatePoupees(increment, poupeeActuelle.Fille);
+    }
+
+    return poupeeActuelle;
+}
+
+void ShowAllPoupees(PoupeeRusse poupeeParam)
+{
+    Console.WriteLine(poupeeParam.Couleur);
+    if (poupeeParam.Fille != null)
+    {
+        ShowAllPoupees(poupeeParam.Fille);
+    }
+}
