@@ -1,32 +1,54 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Genealogie;
 
-Humain Papi = new Humain("Papi", new List<Humain>
+
+/*
+ * ------------------------------Papi--------------------------------
+ * ------Papa---------        ----Tonton-----      ----Tatie------
+ * Frere soeur     moi       Cousin 1 Cousin 2     Cousin 3 Cousin4
+ *       neuveu   
+ * */
+
+
+
+
+
+printChild(populateFamily(4), "  ");
+
+/*
+ * 
+ * Créer une famille depuis Papi,avec nbGeneration générations
+ * Chaque membre aura un nombre aléatoire d'enfant
+ * 
+ * */
+Humain populateFamily(int nbGenerationSousParentActuel, Humain parentActuel=null)
 {
-    new Humain("Papa", new List<Humain>() 
-    { 
-        new Humain("Frère", new List<Humain>()), 
-        new Humain("Soeur", new List<Humain>()
+    //JE dois créer papi si parentActuel est null
+    if(parentActuel == null)
+    {
+        parentActuel = new Humain("Papi", new List<Humain>());
+    }
+
+    if (nbGenerationSousParentActuel != 0)
+    {
+        //Je génère un nombre aléatoire
+        //Ce sera son nombre d'enfant
+        Random rnd = new Random();
+        int nbChild = rnd.Next(4);//chiffre entre 0 et 3
+
+        //Je dois ajouter les enfants à papi
+        for (int i = 0; i < nbChild; i++)
         {
-            new Humain("Neuveu", new List<Humain>())
-        }),
-        new Humain("Moi", new List<Humain>()),
-    }),
-    new Humain("Tonton", new List<Humain>()
-    {
-        new Humain("Cousin 1", new List<Humain>()),
-        new Humain("Cousin 2", new List<Humain>()),
-    }),
-    new Humain("Tatie", new List<Humain>()
-    {
-        new Humain("Cousin 3", new List<Humain>()),
-        new Humain("Cousin 4", new List<Humain>()),
-    }),
-});
+            var child = new Humain("Fils", new List<Humain>());
+            //J'ajoute des enfants à chacuns de mes enfants
+            populateFamily(nbGenerationSousParentActuel - 1, child);
+            parentActuel.Enfants.Add(child);
+        }
 
+    }
 
-printChild(Papi, "  ");
-
+    return parentActuel;
+}
 
 void printChild(Humain man, string indent)
 {
