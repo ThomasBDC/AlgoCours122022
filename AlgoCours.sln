@@ -17,9 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoupeeRusse", "PoupeeRusse\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExerciceSeance4", "ExerciceSeance4", "{CAB33F4B-D92B-4E6B-84F8-709E790C7437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PairEntreUnEtN", "PairEntreUnEtN\PairEntreUnEtN.csproj", "{A52E0A77-DB60-4593-8A03-FD0B7121F8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PairEntreUnEtN", "PairEntreUnEtN\PairEntreUnEtN.csproj", "{A52E0A77-DB60-4593-8A03-FD0B7121F8A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcOnArray", "CalcOnArray\CalcOnArray.csproj", "{4C876498-8C09-4210-B767-499D2D547458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcOnArray", "CalcOnArray\CalcOnArray.csproj", "{4C876498-8C09-4210-B767-499D2D547458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TRI", "TRI", "{8AEFA2C8-BB06-481F-9D43-DDF116EC3D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriABulles", "TriABulles\TriABulles.csproj", "{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,10 @@ Global
 		{4C876498-8C09-4210-B767-499D2D547458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C876498-8C09-4210-B767-499D2D547458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C876498-8C09-4210-B767-499D2D547458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +74,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A52E0A77-DB60-4593-8A03-FD0B7121F8A8} = {CAB33F4B-D92B-4E6B-84F8-709E790C7437}
 		{4C876498-8C09-4210-B767-499D2D547458} = {CAB33F4B-D92B-4E6B-84F8-709E790C7437}
+		{8EA9EEAF-9AC0-4AD8-8779-12A04AAB70B0} = {8AEFA2C8-BB06-481F-9D43-DDF116EC3D8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EDFBD9F-6968-450C-99EB-494E38D48E1A}
